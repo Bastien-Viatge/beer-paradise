@@ -7,6 +7,7 @@ class UserController {
 	}
 	
 	def loginUser(){
+		flash.message = "test"
 		
 	}
 	
