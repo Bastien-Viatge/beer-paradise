@@ -13,8 +13,8 @@ class User {
 		"$mail"
 	}
 		
-    def constraints = {
+    static constraints = {
 		mail(mail:true)
-		password(blank:false, password=true)
+		password(blank:false, password:true)
     }
 }

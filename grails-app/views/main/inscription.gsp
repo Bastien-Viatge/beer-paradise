@@ -117,7 +117,7 @@
     <!-- <label for="country"> Country *: </label> <input type="text" name="Country"/> <br/>
     <label for="city"> City *: </label> <input type="text" name="City"/> <br/>
     <label for="postal"> Postal *: </label> <input type="text" name="Postal"/> <br/>
-    <label for="adress"> Adress *: </label> <input type="text" name="Address"/> <br/>-->
+    <label for="address"> Address *: </label> <input type="text" name="Address"/> <br/>-->
     <label for="address">Address</label><g:textArea name="address"/><br/>
 
     <label for="mail"> Mail address : </label> <g:textField type="text" name="mail"/> <br/>
