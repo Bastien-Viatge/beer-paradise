@@ -32,7 +32,7 @@
 </header>
 
 <center>
-<h3 id="hello-mister"> Hello Mister User </h3>
+<h3 id="hello-mister"> Hello Mister ${user.firstName } </h3>
 <center>
 
 <footer>

@@ -98,7 +98,7 @@
           
       </header>
 
-
+	${flash.message}
 
 <g:form controller="Main" action="saveUser">
 <!-- creemos un formulario con el método POST -->

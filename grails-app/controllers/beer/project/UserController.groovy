@@ -9,4 +9,9 @@ class UserController {
 	def loginUser(){
 		
 	}
+	
+	def display(){
+		def users = User.list()
+		[users:users]
+	}
 }
