@@ -3,11 +3,9 @@ package beer.project
 class MainController {
 
     def index() {
-		render (view:'index.gsp')
 	}
 	
 	def inscription(){
-		render (view:'inscription.gsp')
 	}
 	
 	def saveUser(){

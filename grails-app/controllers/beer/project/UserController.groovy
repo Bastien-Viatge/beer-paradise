@@ -7,8 +7,22 @@ class UserController {
 	}
 	
 	def loginUser(){
-		flash.message = "test"
-		
+		if(params.mail != null && params.password != null){
+			def users = User.list()
+			session.user = null
+			for(User user : users){
+				if(user.mail == params.mail && user.password == params.password){
+					session.user = user
+				}
+			}
+			redirect(controller:"Main",action:"index")
+		}
+	}
+	
+	def logout(){
+		flash.message = "Successfully logged out !"
+		session.user = null	
+		redirect(controller:"Main",action:"index")	
 	}
 	
 	def display(){

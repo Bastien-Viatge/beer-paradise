@@ -41,15 +41,24 @@
 <header id="header">
 	
 	<h1 id="header_title"> Welcome to Beer Paradise </h1>
-	<div id="login_part" >
-		<form action="#" method="post">
-			<p id="login_name_div">User name : <input type="text" name="login"></p>
-			<p id="login_pass_div">Password : <input type="password" name="pwd"></p>
-			<input id="login_button" type="submit" value="Log in"/><br/>
-			<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="./Inscription.html">Sign in !</a></p>
-		</form>
+	<g:if test="${session.user}">
+		<div id="logged_part">
+			<p> Welcome ${session.user.firstName } !</p>
+			<g:link controller="user" action="logout">Logout</g:link>
+		</div>
+	</g:if>
+	<g:else>
+		<div id="login_part" >
+		${flash.message }
+			<g:form controller="user" action="loginUser">
+				<p id="login_name_div">User mail : <g:textField type="text" name="mail"/></p>
+				<p id="login_pass_div">Password : <g:passwordField type="password" name="password"/></p>
+				<input id="login_button" type="submit" value="Log in"/><br/>
+				<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="./Inscription.html">Sign in !</a></p>
+			</g:form>
 
-	</div>
+		</div>
+	</g:else>
 	
 	<ul class="sel">
 		<li><a href="index.html"> Home </a></li>
