@@ -49,13 +49,10 @@
     
     <div class="contenu">
         <div class="detail">
-            <div class="ima"><img src="images/R2.png" /></div>
-            <div class="tit">Leffe</div>
-            <div class="pri">Price : 20.00€ </div>
-            <div class="des">Description : <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum1
+            <div class="ima"><img src="${resource(dir: 'images', file:beer.photoName)}" /></div>
+            <div class="tit">${beer.beerName }</div>
+            <div class="pri">Price : ${beer.price } </div>
+            <div class="des">Description : <br/> ${beer.presentation }
             </div>
             <br/>
             <div class="opinion"> Clients opinion : 8.7/10 </div>
@@ -120,6 +117,7 @@
             </form>
           </div>
                  
+        </div>
         </div>
        
 </body>

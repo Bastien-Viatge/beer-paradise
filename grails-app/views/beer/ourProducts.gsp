@@ -59,7 +59,7 @@
 				</div>
 		        <br/>
 				<div class="num">Stock : ${beer.quantity }</div>
-				<g:link controller="beer" action="detail"> <input type="button" value="Add to cart" name="ajouter-quantite"/> </g:link> 
+				<g:link controller="beer" action="detail" params="[index:i]"> <input type="button" value="Add to cart" name="ajouter-quantite"/> </g:link> 
 			
 	
 		</div>
