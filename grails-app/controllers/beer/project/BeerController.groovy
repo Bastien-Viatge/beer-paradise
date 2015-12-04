@@ -13,4 +13,8 @@ class BeerController {
 		def beers = Beer.list()
 		[ourProducts:beers]
 	}
+	
+	def detail(){
+		
+	}
 }

@@ -59,8 +59,8 @@
 				</div>
 		        <br/>
 				<div class="num">Stock : ${beer.quantity }</div>
-	
-			<a href="./detail.html" class="nounderline"> <input type="button" value="Add to cart" name="ajouter-quantite"/> </a>
+				<g:link controller="beer" action="detail"> <input type="button" value="Add to cart" name="ajouter-quantite"/> </g:link> 
+			
 	
 		</div>
 		<br/>
