@@ -8,11 +8,20 @@ class MainController {
 	def inscription(){
 	}
 	
+	def ourProducts(){
+		
+	}
+	
+	def clientSpace(){
+		
+		
+	}
+	
 	def saveUser(){
 		def user = new User(params)
 		if(user.validate()){
 			user.save()
-			session.user = user
+			session.user=user
 			render (view:'ins.gsp')
 		}else{
 			flash.message = "Please enter all the asked data in order to create a profile."
