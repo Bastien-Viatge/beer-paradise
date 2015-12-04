@@ -15,14 +15,14 @@ class UserController {
 					session.user = user
 				}
 			}
-			redirect(controller:"Main",action:"index")
+			redirect(uri: request.getHeader('referer') )
 		}
 	}
 	
 	def logout(){
 		flash.message = "Successfully logged out !"
 		session.user = null	
-		redirect(controller:"Main",action:"index")	
+		redirect(uri: request.getHeader('referer') )
 	}
 	
 	def display(){

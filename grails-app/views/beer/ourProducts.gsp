@@ -21,7 +21,7 @@
 	<g:if test="${session.user}">
 		<div id="logged_part">
 			<p> Welcome ${session.user.firstName } !</p>
-			<g:link controller="user" action="logout">Logout</g:link>
+			<g:link controller="user" action="logout" params="[targetUri: (request.forwardURI - request.contextPath)]">Logout</g:link>
 		</div>
 	</g:if>
 	<g:else>

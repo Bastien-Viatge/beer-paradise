@@ -21,12 +21,12 @@
 </div>
 
 <ul class="sel">
-<li><a href="index.html"> Home </a></li>
-<li><a href="index.html#about_us"> About Us </a></li>
-<li><a href="Products.html"> Our Beers </a> </li>
-<li><a href="index.html#where_to"> Where to find us ? </a></li>
-<li><a href="index.html#contact_us"> Contact Us </a></li>
-<li><a href="client-space.html"> Client Space </a></li>
+		<li><g:link controller="main" action="index">Home </g:link></li>
+		<li><g:link controller="main" action="index">About Us </g:link></li>
+		<li><g:link controller="beer" action="ourProducts">Our Products</g:link></li>
+		<li><g:link controller="main" action="index">Where to find us ? </g:link></li>
+        <li><g:link controller="main" action="index">Contact Us </g:link></li>
+        <li><g:link controller="main" action="clientSpace">Client Space</g:link></li>
 </ul>
 
 </header>
