@@ -45,20 +45,31 @@
 </header>
 
 <div class="contenu">
-	<h2>Welcome to your personal space ${session.user.firstName } !</h2>
-	<div id="client_data">
-		<p>Delivery address :</p>
-		${session.user.address}
-		<div id="contact_data">
-			<p id="id_contact">Contact :</p>
-			${session.user.mail }
+	<g:if test="${session.user}">
+		<h2>Welcome to your personal space ${session.user.firstName } !</h2>
+		<div id="client_data">
+			<p>Delivery address :</p>
+			${session.user.address}
+			<div id="contact_data">
+				<p id="id_contact">Contact :</p>
+				${session.user.mail }
+			</div>
+			<div id="birth_data">
+				<p id="id_birth">Birth date :</p>
+				${session.user.birthDate }
+			</div>
 		</div>
-		<div id="birth_data">
-		<p id="id_birth">Birth date :</p>
-		${session.user.birthDate }
-		</div>
+	</g:if>
+	<g:else>
+	<p> You need to be logged to access to your client space </p>
+		<g:form controller="user" action="loginUser">
+				<p id="login_name_div">User mail : <g:textField type="text" name="mail"/></p>
+				<p id="login_pass_div">Password : <g:passwordField type="password" name="password"/></p>
+				<input id="login_button" type="submit" value="Log in"/><br/>
+				<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="./Inscription.html">Sign in !</a></p>
+			</g:form>
+	</g:else>
 		
-		<input id="shop_but" type="button" value="Previous shopping" onclick="alert('It seems that so far, you havn\'t bought anything yet !');"/>
 	</div>
 	<hr size="1" color="black"/>
 	<div id="client_cart">
