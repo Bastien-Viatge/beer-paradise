@@ -59,18 +59,7 @@
 				${session.user.birthDate }
 			</div>
 		</div>
-	</g:if>
-	<g:else>
-	<p> You need to be logged to access to your client space </p>
-		<g:form controller="user" action="loginUser">
-				<p id="login_name_div">User mail : <g:textField type="text" name="mail"/></p>
-				<p id="login_pass_div">Password : <g:passwordField type="password" name="password"/></p>
-				<input id="login_button" type="submit" value="Log in"/><br/>
-				<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="./Inscription.html">Sign in !</a></p>
-			</g:form>
-	</g:else>
-		
-	</div>
+		</div>
 	<hr size="1" color="black"/>
 	<div id="client_cart">
 		<h2>My shopping cart :</h2>
@@ -118,7 +107,21 @@
 			<button style="float:right;font-size: 1.2em;">Pay !</button>
 		</div>
 	</div>
-</div>
+	
+	</g:if>
+	<g:else>
+	<h4> You need to be logged to access to your client space </h4>
+		<g:form controller="user" action="loginUser">
+				<p id="login_name_div">User mail : <g:textField type="text" name="mail"/></p>
+				<p id="login_pass_div">Password : <g:passwordField type="password" name="password"/></p>
+				<input id="login_button" type="submit" value="Log in"/><br/>
+				<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="./Inscription.html">Sign in !</a></p>
+			</g:form>
+			
+			
+	</g:else>
+		
+	
 
 <footer>
 	<center>
