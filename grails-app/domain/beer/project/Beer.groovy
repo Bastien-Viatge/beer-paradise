@@ -6,6 +6,7 @@ class Beer {
 	String presentation
 	double price
 	int quantity
+	String photoName
     static constraints = {
     }
 }

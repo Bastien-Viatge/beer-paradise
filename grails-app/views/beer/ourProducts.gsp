@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+
 <head>
 
 <title> Beer Paradise </title>
@@ -52,7 +52,7 @@
 
 	<g:each in="${ourProducts}" var="beer" status="i">
 		<div class="prod">
-			<div class="ima"><img src="images/R2.png" /></div>
+			<div class="ima"><img src="${resource(dir: 'images', file:beer.photoName)}" /></div>
 				<div class="tit">${beer.beerName }</div>
 		        <div class="pri">Price : ${beer.price }€ </div>
 				<div class="des">Description : <br/> ${beer.presentation }
@@ -75,4 +75,3 @@
 </footer>
 
 </body>
-</html>
