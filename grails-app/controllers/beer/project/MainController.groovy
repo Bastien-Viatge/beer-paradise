@@ -12,7 +12,8 @@ class MainController {
 		def user = new User(params)
 		if(user.validate()){
 			user.save()
-			render (view:'ins.gsp',model:[user:user])
+			session.user = user
+			render (view:'ins.gsp')
 		}else{
 			flash.message = "Please enter all the asked data in order to create a profile."
 			render(view:'inscription.gsp')
