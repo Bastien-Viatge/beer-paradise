@@ -66,7 +66,7 @@
 		<li><a href="Products.html"> Our Beers </a> </li>
 		<li><a href="#where_to"> Where to find us ? </a></li>
         <li><a href="#contact_us"> Contact Us </a></li>
-        <li><a href="client-space.html"> Client Space </a></li>
+        <li><g:link controller="main" action="clientSpace"> Client Space </g:link> </li>
 	</ul>
 	
 </header>
