@@ -13,4 +13,10 @@ class BeerController {
 		def beers = Beer.list()
 		[ourProducts:beers]
 	}
+	
+	def detail(){
+		def beers = Beer.list()
+		
+		[beer:beers.get(params.index)]
+	}
 }
