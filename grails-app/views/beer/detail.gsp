@@ -57,7 +57,7 @@
             <br/>
             <div class="opinion"> Clients opinion : 8.7/10 </div>
             
-                <a href="./Products.html" class="back-2-our-beers"> <input type="button" value="Our beers" name="our-beers"/> </a>
+                <g:link controller="beer" action="ourProducts" class="back-2-our-beers"> <input type="button" value="Our beers" name="our-beers"/> </g:link>
             
         </div>
         

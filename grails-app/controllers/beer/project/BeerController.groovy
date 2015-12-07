@@ -16,7 +16,7 @@ class BeerController {
 	
 	def detail(){
 		def beers = Beer.list()
-		
-		[beer:beers.get(params.index)]
+		int index = (params.index).toInteger()
+		[beer:beers.get(index)]
 	}
 }
