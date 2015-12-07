@@ -79,44 +79,16 @@
     <div class="carousel-container">
     
         <div id="carousel">
-	        <div class="carousel-feature">
-	          <a href="Products.html"><img class="carousel-image" alt="Image Caption" src="${resource(dir: 'images', file: 'R1.png')}"></a>
+        	<g:each in="${beers }" var ="beer" status="i">
+        	<div class="carousel-feature">
+	          <g:link controller="beer" action="ourProducts" ><img class="carousel-image" alt="Image Caption" src="${resource(dir: 'images', file:beer.photoName)}"></g:link>
 	          <div class="carousel-caption">
 	            <p>
-	              Bière du démon
+	              ${beer.beerName }
 	            </p>
 	          </div>
 	        </div>
-	        <div class="carousel-feature">
-	          <a href="Products.html"><img class="carousel-image" alt="Image Caption" src="${resource(dir: 'images', file: 'R2.png')}"></a>
-	          <div class="carousel-caption">
-	            <p>
-	              Leffe
-	            </p>
-	          </div>
-	        </div>
-	        <div class="carousel-feature">
-		      <a href="http://en.wikipedia.org/wiki/Admiral_Ackbar"><img class="carousel-image" alt="Image Caption" src="${resource(dir: 'images', file: 'R3.jpg')}"></a>
-		      <div class="carousel-caption">
-		        <p>
-		          Rince Cochon
-		        </p>
-		      </div>
-		    </div>
-	        <div class="carousel-feature">
-	          <a href="Products.html"><img class="carousel-image" alt="Image Caption" src="${resource(dir: 'images', file: 'R4.jpg')}"></a>
-	         	<div class="carousel-caption">
-	               	<p>Goudale</p>
-				</div>
-			</div>
-			<div class="carousel-feature">
-		      <a href="Products.html"><img class="carousel-image" alt="Image Caption" src="${resource(dir: 'images', file: 'R5.jpg')}"></a>
-		      <div class="carousel-caption">
-		        <p>
-		         Chouffe
-		        </p>
-		      </div>
-		    </div>
+        	</g:each>
         </div>
     
       <div id="carousel-left"><img src="${resource(dir: 'images', file: 'arrow-left.png')}" /></div>

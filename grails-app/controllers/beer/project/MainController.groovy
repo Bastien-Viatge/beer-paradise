@@ -3,6 +3,8 @@ package beer.project
 class MainController {
 
     def index() {
+		def beers = Beer.list()
+		[beers:beers]
 	}
 	
 	def inscription(){
