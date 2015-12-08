@@ -17,6 +17,8 @@ class BeerController {
 	def detail(){
 		def beers = Beer.list()
 		int index = (params.index).toInteger()
-		[beer:beers.get(index)]
+		def selectedBrand = beers.get(index)
+		def products = Product.findAllWhere(beerBrand:selectedBrand.beerBrand)
+		[beer:selectedBrand,products:products]
 	}
 }

@@ -81,10 +81,10 @@
         <div id="carousel">
         	<g:each in="${beers }" var ="beer" status="i">
         	<div class="carousel-feature">
-	          <g:link controller="beer" action="ourProducts" ><img class="carousel-image" alt="Image Caption" src="${resource(dir: 'images', file:beer.photoName)}"></g:link>
+	          <g:link controller="beer" action="detail" params="[index:i]" ><img class="carousel-image" alt="Image Caption" src="${resource(dir: 'images', file:beer.photoName)}"></g:link>
 	          <div class="carousel-caption">
 	            <p>
-	              ${beer.beerName }
+	              ${beer.beerBrand }
 	            </p>
 	          </div>
 	        </div>

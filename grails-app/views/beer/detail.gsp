@@ -50,12 +50,11 @@
     <div class="contenu">
         <div class="detail">
             <div class="ima"><img src="${resource(dir: 'images', file:beer.photoName)}" /></div>
-            <div class="tit">${beer.beerName }</div>
-            <div class="pri">Price : ${beer.price } </div>
+            <div class="tit">${beer.beerBrand }</div>
             <div class="des">Description : <br/> ${beer.presentation }
             </div>
             <br/>
-            <div class="opinion"> Clients opinion : 8.7/10 </div>
+            <div class="opinion"> Clients opinion : ${beer.opinion }/10 </div>
             
                 <g:link controller="beer" action="ourProducts" class="back-2-our-beers"> <input type="button" value="Our beers" name="our-beers"/> </g:link>
             

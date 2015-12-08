@@ -2,11 +2,10 @@ package beer.project
 
 class Beer {
 
-	String beerName
+	String beerBrand
 	String presentation
-	double price
-	int quantity
 	String photoName
+	double opinion
     static constraints = {
     }
 }

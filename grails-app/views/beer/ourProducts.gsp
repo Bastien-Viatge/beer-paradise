@@ -53,12 +53,11 @@
 	<g:each in="${ourProducts}" var="beer" status="i">
 		<div class="prod">
 			<div class="ima"><img src="${resource(dir: 'images', file:beer.photoName)}" /></div>
-				<div class="tit">${beer.beerName }</div>
-		        <div class="pri">Price : ${beer.price }€ </div>
+				<div class="tit">${beer.beerBrand }</div>
 				<div class="des">Description : <br/> ${beer.presentation }
 				</div>
 		        <br/>
-				<div class="num">Stock : ${beer.quantity }</div>
+				<div class="num">Clients opinion : ${beer.opinion}</div>
 				<g:link controller="beer" action="detail" params="[index:i]"> <input type="button" value="Add to cart" name="ajouter-quantite"/> </g:link> 
 			
 	
