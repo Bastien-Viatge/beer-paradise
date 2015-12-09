@@ -1,4 +1,5 @@
 import beer.project.Beer
+import beer.project.Product
 import beer.project.User
 
 class BootStrap {
@@ -11,7 +12,10 @@ class BootStrap {
 		new Beer(beerBrand:'Cuvée des Trolls',presentation:'Même les moches ont le droit de boire.',opinion:6.45,photoName:"rince.jpg").save()
 		new Beer(beerBrand:'Bière du démon',presentation:'Diaboliquement douce..',opinion:6.15,photoName:"demon.png").save()
 		new Beer(beerBrand:'Goudale',presentation:'Si y\'a du goût, c\'est du Goudale.',opinion:8.95,photoName:"goudale.jpg").save()
-		
+		new Product(beerBrand:'Leffe',productType:'Pack x6',price:6.50,stock:412,idProduct:'LEF_PX6').save()
+		new Product(beerBrand:'Leffe',productType:'Pack x12',price:12,stock:247,idProduct:'LEF_PX12').save()
+		new Product(beerBrand:'Leffe',productType:'Bottle 1L',price:3.50,stock:456,idProduct:'LEF_B1L').save()
+		new Product(beerBrand:'Leffe',productType:'Bottle 0.5L',price:2.25,stock:472,idProduct:'LEF_B05L').save()
     }
     def destroy = {
     }
