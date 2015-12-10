@@ -31,9 +31,10 @@
 				<p id="login_name_div">User mail : <g:textField type="text" name="mail"/></p>
 				<p id="login_pass_div">Password : <g:passwordField type="password" name="password"/></p>
 				<input id="login_button" type="submit" value="Log in"/><br/>
-				<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="./Inscription.html">Sign in !</a></p>
+				<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="../main/Inscription.html">Sign in !</a></p>
+				
 			</g:form>
-
+			
 		</div>
 	</g:else>
 	

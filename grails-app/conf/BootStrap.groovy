@@ -7,7 +7,7 @@ class BootStrap {
     def init = { servletContext ->
 		def date = new Date(System.currentTimeMillis())
 		new User(firstName:'admin',lastName:'admin',password:'admin',birthDate:date,mail:'admin@beer-paradise.com',address:'test').save()
-		
+
 		def leffe = new Beer(beerBrand:'Leffe',presentation:'Trop bonne de ouffe !',opinion:9.05,photoName:"leffe.png")
 		def chouffe = new Beer(beerBrand:'Chouffe',presentation:'Grosse cuite, petit prix',opinion:9.15,photoName:"chouffe.jpg")
 		def cuvee = new Beer(beerBrand:'Cuvee des Trolls',presentation:'Meme les moches ont le droit de boire.',opinion:6.45,photoName:"rince.jpg")
@@ -43,7 +43,7 @@ class BootStrap {
 		goudale.addToProducts(new Product(productType:'50cl can',price:3.00,stock:1000,idProduct:'00019'))
 		goudale.addToProducts(new Product(productType:'Pack(x6)',price:15.00,stock:1000,idProduct:'00020'))
 		goudale.save(flush:true,failOnError:true)
-		
+
     }
     def destroy = {
     }
