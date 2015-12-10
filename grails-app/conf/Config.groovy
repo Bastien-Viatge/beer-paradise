@@ -88,9 +88,15 @@ grails.hibernate.osiv.readonly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+		grails.paypal.server = "https://www.sandbox.paypal.com/cgi-bin/webscr"
+		grails.paypal.email = "nicolasbarbusse@hotmail.com"
+		grails.serverURL = "http://localhost:8080/beer-project"
     }
     production {
         grails.logging.jul.usebridge = false
+		grails.paypal.server = "https://www.paypal.com/cgi-bin/webscr"
+		grails.paypal.email = "nicolasbarbusse@hotmail.com"
+		grails.serverURL = "http://beer-paradise.com"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
