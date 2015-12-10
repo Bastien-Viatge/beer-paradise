@@ -8,6 +8,18 @@
 		<link href="${resource(dir: 'css', file: 'Style.css')}" rel="stylesheet" type="text/css" />
 		<link href="${resource(dir: 'css', file: 'header.css')}" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="${resource(dir: 'css', file: 'login.css')}">
+		<script type="text/javascript">
+		var data;
+		function loading(){
+			var priceProductMap = new Map();
+			var temp = "${jsonProds}";
+			temp = temp.replace(/&quot;/g,'"');
+			data = JSON.parse(temp);
+
+		}
+		window.onpaint = loading()	
+		</script>
+		
 	</head>
 
 
@@ -46,7 +58,8 @@
 	</ul>
 	
 </header>
-    
+    ${jsonProds }
+    <script type="text/javascript">alert(data);</script>
     <g:if test="${session.user}">
     <div class="contenu">
         <div class="detail">
