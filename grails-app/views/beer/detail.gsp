@@ -47,7 +47,7 @@
 	
 </header>
     
-    <g:if test="${session.user}">
+    
     <div class="contenu">
         <div class="detail">
             <div class="ima"><img src="${resource(dir: 'images', file:beer.photoName)}" /></div>
@@ -110,7 +110,7 @@
                         <td/>
                         <td/>
                         <td/>
-                        <td> <input type="submit" value="Add to my cart" class="submit-detail" /> </td> </tr>
+                        <td>  <g:link controller="main" action="clientSpace" params="[index:i]"> <input type="button" value="Add to cart" name="ajouter-quantite"/> </g:link></td> </tr>
                     
                     </table>
                             
@@ -119,18 +119,7 @@
                  
         </div>
         </div>
-        </g:if>
-		<g:else>
-		<h4> You need to be logged to add something to your cart </h4>
-		<g:form controller="user" action="loginUser">
-				<p id="login_name_div">User mail : <g:textField type="text" name="mail"/></p>
-				<p id="login_pass_div">Password : <g:passwordField type="password" name="password"/></p>
-				<input id="login_button" type="submit" value="Log in"/><br/>
-				<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="../main/Inscription.html">Sign in !</a></p>
-			</g:form>
-			
-			
-	</g:else>
+        
        
 </body>
 </html>
