@@ -77,7 +77,7 @@
                 
                     <table id="table-product">
                     
-                    <tr><td id="select-beer"> Selected beer : The Leffe </td>
+                    <tr> <td id="select-beer" width=1000 valign="middle" align="left"> Selected beer : ${beer.beerBrand }  </td>
                     <td> <label for="product"> Product : </label> </td>
                     <td> <SELECT name="product-type" size="1">
                         <OPTION>1L Bottle
