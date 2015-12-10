@@ -80,10 +80,9 @@
                     <tr> <td id="select-beer" width=1000 valign="middle" align="left"> Selected beer : ${beer.beerBrand }  </td>
                     <td> <label for="product"> Product : </label> </td>
                     <td> <SELECT name="product-type" size="1">
-                        <OPTION>1L Bottle
-                        <OPTION>33cl Bottle
-                        <OPTION>50cl Can
-                        <OPTION>Pack(✕6)
+                    <g:each in="${products}" var="prod" status="i">
+                        <option>${prod.productType }
+                     </g:each>
                             </SELECT>
                     </td>
                     <td> <label for="product"> Quantity : </label> </td>
