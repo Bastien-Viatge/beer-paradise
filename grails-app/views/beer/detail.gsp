@@ -67,8 +67,6 @@
             <br/>
             <br/>
             <br/>
-            <div class=""> In your cart : 1 ✕ pack(✕6) </div>
-            <br/>
             <br/>
             
             <div class="form-product">
@@ -77,13 +75,16 @@
                 
                     <table id="table-product">
                     
-                    <tr> <td id="select-beer" width=1000 valign="middle" align="left"> Selected beer : ${beer.beerBrand }  </td>
+                    <tr> <td id="select-beer" width="350" valign="middle" align="left"> Selected beer : ${beer.beerBrand }  </td>
                     <td> <label for="product"> Product : </label> </td>
-                    <td> <SELECT name="product-type" size="1">
-                    <g:each in="${products}" var="prod" status="i">
-                        <option>${prod.productType }
-                     </g:each>
-                            </SELECT>
+                    <td> 
+                    <g:select name="productType" 
+                    		from="${beer.products }" 
+                    		value="idProduct"
+                    		optionKey="idProduct"
+                    		optionValue="productType"
+                    		/>
+                    
                     </td>
                     <td> <label for="product"> Quantity : </label> </td>
                     <td> <SELECT name="quantity-product" size="1">

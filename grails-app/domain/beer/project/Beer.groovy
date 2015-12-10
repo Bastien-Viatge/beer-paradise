@@ -6,6 +6,7 @@ class Beer {
 	String presentation
 	String photoName
 	double opinion
+	static hasMany = [products:Product]
     static constraints = {
     }
 }

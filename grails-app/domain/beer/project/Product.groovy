@@ -2,7 +2,7 @@ package beer.project
 
 class Product {
 	
-	String beerBrand
+	static belongsTo = [beerBrand:Beer]
 	String productType
 	double price
 	int stock

@@ -18,7 +18,6 @@ class BeerController {
 		def beers = Beer.list()
 		int index = (params.index).toInteger()
 		def selectedBrand = beers.get(index)
-		def products = Product.findAllWhere(beerBrand:selectedBrand.beerBrand)
-		[beer:selectedBrand,products:products]
+		[beer:selectedBrand]
 	}
 }
