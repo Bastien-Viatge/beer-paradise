@@ -19,6 +19,13 @@ class MainController {
 		
 	}
 	
+	def addToCart(){
+		if(session.user == null){
+			flash.message = "You need to be logged to add products to your cart."
+		}
+		render(view:'clientSpace.gsp')
+	}
+	
 	def saveUser(){
 		def user = new User(params)
 		if(user.validate()){

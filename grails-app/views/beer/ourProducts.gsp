@@ -59,7 +59,7 @@
 				</div>
 		        <br/>
 				<div class="num">Clients opinion : ${beer.opinion}</div>
-				<g:link controller="beer" action="detail" params="[index:i]"> <input type="button" value="Add to cart" name="ajouter-quantite"/> </g:link> 
+				<g:link controller="beer" action="detail" params="[index:i]"> <input type="button" value="View more" name="ajouter-quantite"/> </g:link> 
 			
 	
 		</div>
