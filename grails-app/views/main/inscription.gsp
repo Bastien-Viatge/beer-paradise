@@ -110,14 +110,9 @@
     <label for="name"> Name : </label> <g:textField type="text" name="firstName"/> <br/>
     <label for="lastName"> Surname : </label> <g:textField type="text" name="lastName"/> <br/>
     <label for="password"> Password : </label> <g:passwordField type="password" name="password"/> <br/>
-    <!--  <label for="validation"> Validation *: </label> <g:textField type="password" name="Validation"/> <br/>-->
 
     <label for="birthDate"> Birth date : </label> <g:datePicker type="text" name="birthDate" id="datepicker" precision="day"/> <br/>
 
-    <!-- <label for="country"> Country *: </label> <input type="text" name="Country"/> <br/>
-    <label for="city"> City *: </label> <input type="text" name="City"/> <br/>
-    <label for="postal"> Postal *: </label> <input type="text" name="Postal"/> <br/>
-    <label for="address"> Address *: </label> <input type="text" name="Address"/> <br/>-->
     <label for="address">Address</label><g:textArea name="address"/><br/>
 
     <label for="mail"> Mail address : </label> <g:textField type="text" name="mail"/> <br/>

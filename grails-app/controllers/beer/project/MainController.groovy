@@ -26,7 +26,7 @@ class MainController {
 			session.user=user
 			render (view:'ins.gsp')
 		}else{
-			flash.message = "Please enter all the asked data in order to create a profile."
+			flash.message = "Please enter all the required data to create your profile."
 			render(view:'inscription.gsp')
 		}
 	}
