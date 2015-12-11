@@ -9,5 +9,7 @@ class Product {
 	String idProduct
 
     static constraints = {
+		price(blank:false, nullable:false)
+		idProduct(blank:false, nullable:false, unique:true)
     }
 }

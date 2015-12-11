@@ -8,7 +8,6 @@ class User {
 	Date birthDate
 	String mail
 	String address
-	int userId
 	
 	String toString(){
 		"$mail"
