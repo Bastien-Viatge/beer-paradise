@@ -117,10 +117,11 @@
                 
                     <table id="table-product">
                     
-                    <tr> <td id="select-beer" width="350" valign="middle" align="left"> Selected beer : ${beer.beerBrand }  </td>
+                    <tr> <td id="select-beer" width="350" valign="middle" align="left"> Selected beer : ${beer.beerBrand }  </td>
                     <td> <label for="product"> Product : </label> </td>
                     <td> 
                     <g:select id="productTypeSelected" name="productType" onchange="getSelectValue('productTypeSelected');" 
+
                     		from="${beer.products }" 
                     		value="idProduct"
                     		optionKey="idProduct"

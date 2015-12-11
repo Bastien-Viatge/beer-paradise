@@ -59,6 +59,7 @@ grails {
     }
 }
 
+grails.validateable.classes = [beer.project.user]
 
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
