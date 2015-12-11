@@ -6,7 +6,7 @@ class BootStrap {
 
     def init = { servletContext ->
 		def date = new Date(System.currentTimeMillis())
-		new User(firstName:'admin',lastName:'admin',password:'admin',birthDate:date,mail:'admin@beer-paradise.com',address:'test').save()
+		new User(firstName:'admin',lastName:'admin',verification:'admin',password:'admin',birthDate:date,mail:'admin@beer-paradise.com',address:'test').save()
 
 		def leffe = new Beer(beerBrand:'Leffe',presentation:'Trop bonne de ouffe !',opinion:9.05,photoName:"leffe.png")
 		def chouffe = new Beer(beerBrand:'Chouffe',presentation:'Grosse cuite, petit prix',opinion:9.15,photoName:"chouffe.jpg")

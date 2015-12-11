@@ -97,28 +97,33 @@
           </ul>
           
       </header>
+	
 
-	${flash.message}
-
-<g:form controller="Main" action="saveUser">
+<g:form controller="Main" action="saveUser" id="newUserForm">
 <!-- creemos un formulario con el método POST -->
     
     <h2> Please enter your datas : </h2>
 <br/>
+<g:hasErrors bean="${user }">
+	<div class="error">
+		<g:renderErrors bean="${user }"/>
+	</div>
+</g:hasErrors>
 
 <p>
-    <label for="name"> Name : </label> <g:textField type="text" name="firstName"/> <br/>
-    <label for="lastName"> Surname : </label> <g:textField type="text" name="lastName"/> <br/>
-    <label for="password"> Password : </label> <g:passwordField type="password" name="password"/> <br/>
+    <label for="name"> Name : </label> <g:textField name="firstName" value="${user?.firstName}"/> <br/>
+    <label for="lastName"> Surname : </label> <g:textField name="lastName" value="${user?.lastName}"/> <br/>
+    
+    <label for="password"> Password : </label> <g:passwordField name="password" /> <br/>
+	<label for="verification">Verification :</label> <g:passwordField name="verification" /> <br/>
+    <label for="birthDate"> Birth date : </label> <g:datePicker type="text" name="birthDate" id="datepicker" precision="day" value="${user?.birthDate}"/> <br/>
 
-    <label for="birthDate"> Birth date : </label> <g:datePicker type="text" name="birthDate" id="datepicker" precision="day"/> <br/>
+    <label for="address">Address</label><g:textArea name="address" value="${user?.address}"/><br/>
 
-    <label for="address">Address</label><g:textArea name="address"/><br/>
-
-    <label for="mail"> Mail address : </label> <g:textField type="text" name="mail"/> <br/>
+    <label for="mail"> Mail address : </label> <g:textField name="mail" value="${user?.mail}"/> <br/>
 
 </p>
-	<input type="submit" value="Submit" name="submit" onClick="javascript: return verif();"/>   <br/>
+	<input type="submit" value="Submit" name="submit"/>   <br/>
 	
 
 
