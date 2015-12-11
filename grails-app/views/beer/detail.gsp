@@ -112,7 +112,7 @@
             <br/>
             
             <div class="form-product" id="form-prod">
-            <form action="client-space.html" method="post" id="form-product-type">
+            <g:form controller="main" action="addToCart" id="form-product-type">
                 
                 
                     <table id="table-product">
@@ -129,14 +129,8 @@
                     		/>
                     
                     </td>
-                    
-                     <script type="text/javascript">
-                    
-                    
-                    </script> 
-                    
                     <td> <label for="product"> Quantity : </label> </td>
-                    <td> <SELECT id="productQuantity" name="quantity-product" size="1" onchange="getSelectValue('productQuantity');">
+                    <td> <SELECT id="productQuantity" name="quantity" size="1" onchange="getSelectValue('productQuantity');">
                         <OPTION selected="selected">1 </OPTION>
                         <OPTION>2 </OPTION>
                         <OPTION>3 </OPTION>
@@ -152,21 +146,7 @@
                             
                             
                             
-                    </td>
-                    <!-- 
-                    <div id="affichage">test</div>
-					<script type="text/javascript">
-					var prenom = "toto";
-					document.getElementById("affichage").innerHTML = prenom;
-					</script>  
-					
-					<script>
-var selectElmt = document.getElementById("ComboPays");
-var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
-var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
-</script>
-					-->
-					
+                    </td>			
                     <td id="priceTag"> Price :    </td>
                     </tr>
                     
@@ -178,11 +158,11 @@ var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
                         <td/>
                         <td/>
                         <td/>
-                        <td>  <g:link controller="main" action="clientSpace" params="[index:i]"> <input type="button" value="Add to cart" name="ajouter-quantite"/> </g:link></td> </tr>
+                        <td>   <input type="submit" value="Add to cart" name="ajouter-quantite"/> </td> </tr>
                     
                     </table>
                             
-            </form>
+            </g:form>
           </div>
                  
         </div>

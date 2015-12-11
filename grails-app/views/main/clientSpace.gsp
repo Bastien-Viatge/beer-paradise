@@ -48,6 +48,7 @@
 <div class="contenu">
 	<g:if test="${session.user}">
 		<h2>Welcome to your personal space ${session.user.firstName } !</h2>
+		${session.id  }
 		<div id="client_data">
 			<p>Delivery address :</p>
 			${session.user.address}
