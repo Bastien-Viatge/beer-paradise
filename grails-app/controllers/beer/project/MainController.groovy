@@ -33,6 +33,7 @@ class MainController {
 				render(view:'inscription.gsp',model:[user:u])
 			
 			}else{
+				u.save()
 				session.user=u
 				render(view:'ins.gsp')
 			}
