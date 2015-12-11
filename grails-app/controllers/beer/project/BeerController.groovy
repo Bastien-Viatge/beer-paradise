@@ -22,7 +22,7 @@ class BeerController {
 		def selectedBrand = beers.get(index)
 		def result = [:]
 		for(Product prod : selectedBrand.products){
-			def prodType = prod.productType
+			def prodType = prod.idProduct
 			def price = prod.price
 			result.put(prodType,price)
 			

@@ -101,10 +101,7 @@
 			<span style="float:right;">Total price : 82,20€</span>
 		</div>
 		<div id="pay_part">
-			<span>Quantity :</span><br/><br/>
-			<button>-</button>&nbsp;&nbsp;6&nbsp;&nbsp;<button>+</button>
-			<p>Price for this beer :<br/>
-			2.80x6 = 16.8€</p>
+			
 			<button style="float:right;font-size: 1.2em;">Pay !</button>
 		</div>
 	</div>

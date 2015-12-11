@@ -10,20 +10,51 @@
 		<link rel="stylesheet" type="text/css" href="${resource(dir: 'css', file: 'login.css')}">
 		<script type="text/javascript">
 		var data;
+		var qteChoosen;
 		function loading(){
 			var priceProductMap = new Map();
 			var temp = "${jsonProds}";
 			temp = temp.replace(/&quot;/g,'"');
 			data = JSON.parse(temp);
+			
 
 		}
-		window.onpaint = loading()	
+		window.onpaint = loading();
+		
+		function getSelectValue(){
+	/**recuperamos el elemento html <select> (la quantidad)*/
+			var quantitySelected = document.getElementById("productQuantity");
+			var productSelected = document.getElementById("productTypeSelected")
+			
+			
+			var temp1 = quantitySelected.options[quantitySelected.selectedIndex].value;
+			qteChoosen = parseInt(temp1);
+
+			var temp2 = productSelected.options[productSelected.selectedIndex].value;
+			temp2 = parseInt(temp2);
+			var price;
+			for (var i in data){
+				if (data.hasOwnProperty(i)){
+					if (temp2 == i)
+						
+						price = data[i];
+
+					}
+
+				}
+			 
+			var priceElement = document.getElementById("priceTag");
+			var result = price * qteChoosen; 
+			priceElement.innerHTML = "Price : " + price + " x " + qteChoosen +" = "+ result+"€";
+			return qteChoosen;
+		}
+		//var selectValue = getSelectValue('productQuantity');
 		</script>
 		
 	</head>
 
 
-<body>
+<body onload="getSelectValue();">
     
 	<header id="header">
 	
@@ -80,7 +111,7 @@
             <br/>
             <br/>
             
-            <div class="form-product">
+            <div class="form-product" id="form-prod">
             <form action="client-space.html" method="post" id="form-product-type">
                 
                 
@@ -89,7 +120,7 @@
                     <tr> <td id="select-beer" width="350" valign="middle" align="left"> Selected beer : ${beer.beerBrand }  </td>
                     <td> <label for="product"> Product : </label> </td>
                     <td> 
-                    <g:select name="productType" 
+                    <g:select id="productTypeSelected" name="productType" onchange="getSelectValue('productTypeSelected');" 
                     		from="${beer.products }" 
                     		value="idProduct"
                     		optionKey="idProduct"
@@ -97,19 +128,45 @@
                     		/>
                     
                     </td>
+                    
+                     <script type="text/javascript">
+                    
+                    
+                    </script> 
+                    
                     <td> <label for="product"> Quantity : </label> </td>
-                    <td> <SELECT name="quantity-product" size="1">
-                        <OPTION>1
-                        <OPTION>2
-                        <OPTION>3
-                        <OPTION>4
-                        <OPTION>5
-                        <OPTION>6
-                        <OPTION>7
-                        <OPTION>8
+                    <td> <SELECT id="productQuantity" name="quantity-product" size="1" onchange="getSelectValue('productQuantity');">
+                        <OPTION selected="selected">1 </OPTION>
+                        <OPTION>2 </OPTION>
+                        <OPTION>3 </OPTION>
+                        <OPTION>4 </OPTION>
+                        <OPTION>5 </OPTION>
+                        <OPTION>6 </OPTION>
+                        <OPTION>7 </OPTION>
+                        <OPTION>8 </OPTION>
                             </SELECT>
+                            
+                    <script type="text/javascript">
+                    </script>        
+                            
+                            
+                            
                     </td>
-                    <td> Price : 6.90 ✕ 1 = 6.90€ </td>
+                    <!-- 
+                    <div id="affichage">test</div>
+					<script type="text/javascript">
+					var prenom = "toto";
+					document.getElementById("affichage").innerHTML = prenom;
+					</script>  
+					
+					<script>
+var selectElmt = document.getElementById("ComboPays");
+var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
+var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
+</script>
+					-->
+					
+                    <td id="priceTag"> Price :    </td>
                     </tr>
                     
                     
