@@ -72,7 +72,7 @@
 					<p id="login_name_div">User mail : <g:textField type="text" name="mail"/></p>
 					<p id="login_pass_div">Password : <g:passwordField type="password" name="password"/></p>
 					<input id="login_button" type="submit" value="Log in"/><br/>
-					<p id="signIn_link" style="font-size:10pt;">You don't have an account ? <a href="./Inscription.html">Sign in !</a></p>
+					<p id="signIn_link" style="font-size:10pt;"> You don't have an account ? <g:link controller="main" action="inscription">Sign in !</g:link> </p>
 				</g:form>
 
 			</div>
@@ -112,7 +112,7 @@
             <br/>
             
             <div class="form-product" id="form-prod">
-            <g:form controller="main" action="addToCart" id="form-product-type">
+            <g:form controller="main" action="addToCart" >
                 
                 
                     <table id="table-product">
@@ -158,7 +158,7 @@
                         <td/>
                         <td/>
                         <td/>
-                        <td>   <input type="submit" value="Add to cart" name="ajouter-quantite"/> </td> </tr>
+                        <td>   <g:submitButton name="submit" value="Add to Cart"/> </td> </tr>
                     
                     </table>
                             

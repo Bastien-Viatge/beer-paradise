@@ -48,7 +48,6 @@
 <div class="contenu">
 	<g:if test="${session.user}">
 		<h2>Welcome to your personal space ${session.user.firstName } !</h2>
-		${session.id  }
 		<div id="client_data">
 			<p>Delivery address :</p>
 			${session.user.address}
@@ -73,30 +72,14 @@
 					<th>Price (u)</th>
 					<th>Quantity</th>
 				</tr>
-				<tr>
-					<td>Leffe</td>
-					<td>Pack (x6)</td>
-					<td>9.80€</td>
-					<td>2</td>
-				</tr>
-				<tr>
-					<td>Leffe</td>
-					<td>1L bottle</td>
-					<td>5.50€</td>
-					<td>4</td>
-				</tr>
-				<tr>
-					<td>Bière du démon</td>
-					<td>1L bottle</td>
-					<td>5.70€</td>
-					<td>4</td>
-				</tr>
-				<tr style="background-color:#00aaff;">
-					<td>Goudale</td>
-					<td>0.5L bottle</td>
-					<td>2.80€</td>
-					<td>6</td>
-				</tr>
+				<g:each in="${cart}" var="product" status="i">
+					<tr>
+						<td>${product.item.beerBrand.beerBrand}</td>
+						<td>${product.item.productType }</td>
+						<td>${product.item.price}</td>
+						<td>${product.quantity }</td>
+					</tr>
+				</g:each>
 			</table>
 			<input id="cart_but" type="button" value="Empty my cart" />
 			<span style="float:right;">Total price : 82,20€</span>

@@ -15,8 +15,10 @@ class MainController {
 	}
 	
 	def clientSpace(){
-		
-		
+		if(session.user != null){
+			def cart = CartItem.findAllWhere(sessionID:session.id)
+			[cart:cart]
+		}
 	}
 	
 	def addToCart(){
@@ -28,19 +30,13 @@ class MainController {
 			int quantity = (params.quantity).toInteger()
 			String idProd = params.productType
 			def prod = Product.findAllWhere(idProduct:idProd)
-			CartItem item = new CartItem(client:client,shoppingDate:shoppingDate,quantity:quantity,item:prod)
+			String sessionID = session.id
+			CartItem item = new CartItem(client:client,shoppingDate:shoppingDate,quantity:quantity,item:prod,sessionID:sessionID)
 			if(item.validate()){
 				item.save()
-				CartItem[] cart = session.cart
-				if(cart == null){
-					session.cart = item
-				}else{
-					//cart.add(item)
-				}
-				
 			}
 		}
-		render(view:'clientSpace.gsp')
+		redirect(controller:'main',action:'clientSpace')
 	}
 	
 	def displayCart(){

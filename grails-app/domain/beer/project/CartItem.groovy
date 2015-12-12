@@ -6,6 +6,7 @@ class CartItem {
 	User client
 	int quantity
 	Date shoppingDate
+	String sessionID
 
     static constraints = {
     }
