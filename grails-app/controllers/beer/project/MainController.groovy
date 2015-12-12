@@ -17,8 +17,20 @@ class MainController {
 	def clientSpace(){
 		if(session.user != null){
 			def cart = CartItem.findAllWhere(sessionID:session.id)
-			[cart:cart]
+			def totalPrice = 0
+			for(CartItem item in cart){
+				totalPrice += item.quantity*item.item.price
+			}
+			[cart:cart,totalPrice:totalPrice]
 		}
+	}
+	
+	def emptyCart(){
+		CartItem[] cart = CartItem.findAllWhere(sessionID:session.id)
+		for(CartItem item in cart){
+			item.delete(flush:true)
+		}
+		render(view:'clientSpace.gsp')
 	}
 	
 	def addToCart(){

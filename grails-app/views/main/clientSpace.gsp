@@ -65,6 +65,7 @@
 	<div id="client_cart">
 		<h2>My shopping cart :</h2>
 		<div id="cart_part">
+		<g:if test="${cart}">
 			<table id="cart_table">
 				<tr>
 					<th>Beer type</th>
@@ -76,13 +77,21 @@
 					<tr>
 						<td>${product.item.beerBrand.beerBrand}</td>
 						<td>${product.item.productType }</td>
-						<td>${product.item.price}</td>
+						<td>${product.item.price}€</td>
 						<td>${product.quantity }</td>
 					</tr>
 				</g:each>
 			</table>
-			<input id="cart_but" type="button" value="Empty my cart" />
-			<span style="float:right;">Total price : 82,20€</span>
+			
+			<g:form controller="main">
+				<g:actionSubmit id="cart_but" value="Empty my Cart" action="emptyCart" onclick="return confirm('Do you really want to empty your cart ?')"/>
+			</g:form>
+			
+			<span style="float:right;">Total price : ${totalPrice }€</span>
+		</g:if>
+		<g:else>
+			<h4>Your cart is empty..</h4>
+		</g:else>
 		</div>
 		<div id="pay_part">
 			
