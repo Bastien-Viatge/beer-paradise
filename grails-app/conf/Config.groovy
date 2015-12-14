@@ -92,6 +92,7 @@ environments {
 		grails.paypal.server = "https://www.sandbox.paypal.com/cgi-bin/webscr"
 		grails.paypal.email = "nicolasbarbusse@hotmail.com"
 		grails.serverURL = "http://localhost:8080/beer-project"
+		//grails.serverURL = "https://www.paypal.com/cgi-bin/webscr"
     }
     production {
         grails.logging.jul.usebridge = false

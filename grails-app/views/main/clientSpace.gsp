@@ -73,7 +73,7 @@
 					<th>Price (u)</th>
 					<th>Quantity</th>
 				</tr>
-				<g:each in="${cart}" var="product" status="i">
+				<g:each in="${cart.items}" var="product" status="i">
 					<tr>
 						<td>${product.item.beerBrand.beerBrand}</td>
 						<td>${product.item.productType }</td>
@@ -87,16 +87,16 @@
 				<g:actionSubmit id="cart_but" value="Empty my Cart" action="emptyCart" onclick="return confirm('Do you really want to empty your cart ?')"/>
 			</g:form>
 			
-			<span style="float:right;">Total price : ${totalPrice }€</span>
+			<span style="float:right;">Total price : ${cart.totalPrice }€</span>
+			
+    			<paypal:button itemName="${cart.cartName }" itemNumber="${cart.sessionID }" amount="${cart.totalPrice }" buyerId="${session.user.id }"/>
+			
 		</g:if>
 		<g:else>
 			<h4>Your cart is empty..</h4>
 		</g:else>
 		</div>
-		<div id="pay_part">
-			
-			<button style="float:right;font-size: 1.2em;">Pay !</button>
-		</div>
+		
 	</div>
 	
 	</g:if>

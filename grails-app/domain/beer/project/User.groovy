@@ -9,7 +9,9 @@ class User {
 	Date birthDate
 	String mail
 	String address
-	
+	static mapping = {
+		id generator : 'increment'
+	} 
 	String toString(){
 		"$mail"
 	}
