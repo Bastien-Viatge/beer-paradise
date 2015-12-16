@@ -44,16 +44,18 @@ class MainController {
 	}
 	
 	def emptyCart(){
-		CartItem[] cart = CartItem.findAllWhere(sessionID:session.id)
-		for(CartItem item in cart){
-			item.delete(flush:true)
+		def carts = Cart.findAllWhere(sessionID:session.id)
+		Cart cart = carts.get(0)
+		for(CartItem item in cart.items){
+			cart.items.remove(item)
+			item.delete()
 		}
-		render(view:'clientSpace.gsp')
+		cart.totalPrice = 0
+		cart.save(flush:true)
+		render(view:'clientSpace.gsp',model:[cart:cart])
 	}
+
 	
-	/**
-	 * @return
-	 */
 	def addToCart(){
 		if(session.user == null){
 			flash.message = "You need to be logged to add products to your cart."
