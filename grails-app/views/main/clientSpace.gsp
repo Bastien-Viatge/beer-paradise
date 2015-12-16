@@ -89,7 +89,7 @@
 			
 			<span style="float:right;">Total price : ${cart.totalPrice }€</span>
 			
-    			<paypal:button itemName="${cart.cartName }" itemNumber="${cart.sessionID }" amount="${cart.totalPrice }" buyerId="${session.user.id }"/>
+    			<paypal:button itemName="${cart.cartName }" itemNumber="${cart.sessionID }" amount="${cart.totalPrice }" buyerId="${session.user.id }", discountAmount="${0}" />
 			
 		</g:if>
 		<g:else>
