@@ -112,6 +112,19 @@ class MainController {
 		redirect(controller:'main',action:'clientSpace')
 	}
 	
+	def deleteItem(){
+		int cartItemIndex = (params.cartItemIndex).toInteger()
+		def carts = Cart.list()
+		Cart cart = carts.get(0)
+		def cartItems = cart.items
+		CartItem item = cartItems.getAt(cartItemIndex)
+		cart.totalPrice = cart.totalPrice - item.item.price*item.quantity
+		cart.items.remove(item)
+		item.delete()
+		cart.save(flush:true)
+		redirect(controller:'main',action:'clientSpace')
+	}
+	
 	def displayCarts(){
 		def carts = Cart.list()
 		[carts:carts]

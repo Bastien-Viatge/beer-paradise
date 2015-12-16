@@ -72,13 +72,20 @@
 					<th>Product</th>
 					<th>Price (u)</th>
 					<th>Quantity</th>
+					<th>Suppress</th>
 				</tr>
 				<g:each in="${cart.items}" var="product" status="i">
-					<tr>
+					<tr >
 						<td>${product.item.beerBrand.beerBrand}</td>
 						<td>${product.item.productType }</td>
 						<td>${product.item.price}€</td>
 						<td>${product.quantity }</td>
+						<td>
+							<g:form controller="main" >
+								<input type="hidden" name="cartItemIndex" value="${i}"/>
+								<g:actionSubmit action="deleteItem" value="Delete item"/>
+							</g:form>
+						</td>
 					</tr>
 				</g:each>
 			</table>
