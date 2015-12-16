@@ -65,7 +65,7 @@
 	<div id="client_cart">
 		<h2>My shopping cart :</h2>
 		<div id="cart_part">
-		<g:if test="${cart}">
+		<g:if test="${cart.items}">
 			<table id="cart_table">
 				<tr>
 					<th>Beer type</th>
