@@ -51,10 +51,14 @@ class MainController {
 		render(view:'clientSpace.gsp')
 	}
 	
+	/**
+	 * @return
+	 */
 	def addToCart(){
 		if(session.user == null){
 			flash.message = "You need to be logged to add products to your cart."
 		}else{
+			def cartList = Cart.findAllWhere(sessionID:session.id)
 			User client = session.user
 			Date shoppingDate = new Date(System.currentTimeMillis())
 			int quantity = (params.quantity).toInteger()
@@ -62,15 +66,44 @@ class MainController {
 			def prods = Product.findAllWhere(idProduct:idProd)
 			Product prod = prods.get(0)
 			String sessionID = session.id
-			CartItem item = new CartItem(client:client,shoppingDate:shoppingDate,quantity:quantity,item:prod,sessionID:sessionID)
-			if(item.validate()){
-				item.save()
-				def cartList = Cart.findAllWhere(sessionID:session.id)
-				if(!cartList.empty){
-					Cart cart = cartList.get(0)
-					cart.addToItems(item)
-					cart.totalPrice += quantity*prod.price
-					cart.save(flush:true)
+			if(!cartList.empty){
+				boolean alreadyExist = false
+				Cart cart = cartList.get(0)
+				for(CartItem item in cart.items){
+					if(idProd.equals(item.item.idProduct)){
+						item.quantity += quantity
+						cart.totalPrice += item.item.price*quantity
+						item.save(flush:true)
+						cart.save(flush:true)
+						alreadyExist = true
+					}
+				}
+				if(!alreadyExist){
+					CartItem item = new CartItem(client:client,shoppingDate:shoppingDate,quantity:quantity,item:prod,sessionID:sessionID)
+					if(item.validate()){
+						item.save()
+						cart.addToItems(item)
+						cart.totalPrice += quantity*prod.price
+						cart.save(flush:true)
+					}
+				}
+			}else{
+//				User client = session.user
+//				Date shoppingDate = new Date(System.currentTimeMillis())
+//				int quantity = (params.quantity).toInteger()
+//				String idProd = params.productType
+//				def prods = Product.findAllWhere(idProduct:idProd)
+//				Product prod = prods.get(0)
+//				String sessionID = session.id
+				CartItem item = new CartItem(client:client,shoppingDate:shoppingDate,quantity:quantity,item:prod,sessionID:sessionID)
+				if(item.validate()){
+					item.save()
+					if(!cartList.empty){						
+						Cart cart = cartList.get(0)
+						cart.addToItems(item)
+						cart.totalPrice += quantity*prod.price
+						cart.save(flush:true)
+					}
 				}
 			}
 		}
