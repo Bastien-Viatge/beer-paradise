@@ -1,6 +1,9 @@
 package myfilters
 import beer.project.ProductPurchase;
 import org.grails.paypal.Payment
+import beer.project.User
+import beer.project.Cart
+
 
 
 class PurchaseFilters {
@@ -10,9 +13,14 @@ class PurchaseFilters {
 			before = {
 			}
 			after = { Map model ->
-				def user = SystemUser.get(request.payment.buyerId)
-				def item = ProductItem.findByName(request.payment.paymentItems[0].itemName)
-				new ProductPurchase( user:user, payment:request.payment, item:item).save()
+				//def user = User.get(request.payment.buyerId)
+				User user = session.user
+				//def item = ProductItem.findByName(request.payment.paymentItems[0].itemName)
+				def carts = Cart.findAllWhere(sessionID:session.id)
+				Cart cart = carts.get(0)
+				//new ProductPurchase( user:user, payment:request.payment, item:item).save()
+				new ProductPurchase( user:user, payment:request.payment, item:cart).save()
+				
 			}
 			afterView = { Exception e ->
 			}

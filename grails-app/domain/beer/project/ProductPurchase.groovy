@@ -5,7 +5,7 @@ import beer.project.Product;
 
 public class ProductPurchase {
 	User user;
-    CartItem item;
+    Cart item;
     Payment payment;
     boolean completed = false;
 	
