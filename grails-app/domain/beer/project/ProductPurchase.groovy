@@ -1,6 +1,5 @@
-
 package beer.project;
-import org.grails.paypal.Payment;
+import org.grails.paypal.Payment
 import beer.project.Product;
 
 
@@ -9,4 +8,5 @@ public class ProductPurchase {
     CartItem item;
     Payment payment;
     boolean completed = false;
+	
 }
