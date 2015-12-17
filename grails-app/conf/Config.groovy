@@ -90,15 +90,15 @@ environments {
     development {
         grails.logging.jul.usebridge = true
 		grails.paypal.server = "https://www.sandbox.paypal.com/cgi-bin/webscr"
-		grails.paypal.email = "nicolasbarbusse@hotmail.com"
-		grails.serverURL = "http://jbossas-beerparadise.rhcloud.com"
+		grails.paypal.email = "beerparadise.corporation@gmail.com"
+		grails.serverURL = "http://corporation-beerparadise.rhcloud.com/test/"
 		//grails.serverURL = "https://www.paypal.com/cgi-bin/webscr"
     }
     production {
         grails.logging.jul.usebridge = false
 		grails.paypal.server = "https://www.paypal.com/cgi-bin/webscr"
-		grails.paypal.email = "nicolasbarbusse@hotmail.com"
-		grails.serverURL = "http://beer-paradise.com"
+		grails.paypal.email = "beerparadise.corporation@gmail.com"
+		grails.serverURL = "http://corporation-beerparadise.rhcloud.com/test/"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
